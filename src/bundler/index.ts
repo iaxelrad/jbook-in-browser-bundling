@@ -1,11 +1,10 @@
-/* eslint-disable import/no-anonymous-default-export */
 import * as esbuild from 'esbuild-wasm';
-import { fetchPlugin } from '../plugins/fetch-plugin';
-import { unpkgPathPlugin } from '../plugins/unpkg-path-plugin';
+import { fetchPlugin } from './plugins/fetch-plugin';
+import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 
 let service: esbuild.Service;
 
-export default async (rawCode: string) => {
+const bundle = async (rawCode: string) => {
   if (!service) {
     service = await esbuild.startService({
       worker: true,
@@ -26,3 +25,5 @@ export default async (rawCode: string) => {
 
   return result.outputFiles[0].text;
 };
+
+export default bundle;
