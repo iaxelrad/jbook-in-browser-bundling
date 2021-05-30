@@ -8,7 +8,7 @@ interface PreviewProps {
 const html = `
     <html>
       <head>
-        <style>html { background: white; }</style>
+        <style>html { background-color: white; }</style>
       </head>
       <body>
         <div id="root"></div>
@@ -16,12 +16,12 @@ const html = `
           window.addEventListener('message', (event) => {
             try {
               eval(event.data);
-            } catch(err) {
+            } catch (err) {
               const root = document.querySelector('#root');
               root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + err + '</div>';
               console.error(err);
             }
-          }, false)
+          }, false);
         </script>
       </body>
     </html>
