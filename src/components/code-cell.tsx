@@ -14,8 +14,8 @@ const CodeCell = () => {
   };
 
   return (
-    <div>
-      <Resizable direction="vertical">
+    <Resizable direction="vertical">
+      <div>
         <CodeEditor
           initialValue="const a=1;"
           onChange={value => setInput(value)}
@@ -24,8 +24,8 @@ const CodeCell = () => {
           <button onClick={onClick}>Submit</button>
         </div>
         <Preview code={code} />
-      </Resizable>
-    </div>
+      </div>
+    </Resizable>
   );
 };
 
