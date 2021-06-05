@@ -28,7 +28,7 @@ const html = `
             try {
               eval(event.data);
             } catch (err) {
-              handleError();
+              handleError(err);
             }
           }, false);
         </script>
